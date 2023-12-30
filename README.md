@@ -1,3 +1,7 @@
-# Simple table with Search and Filter function
+# ReactJS component snippets
 
-<img src="capture.png">
+<p>Folder list:</p>
+<ol>
+  <li>Simple table with Search and Filter function</li>
+</ol>
+
