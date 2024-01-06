@@ -8,6 +8,17 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Home from "./routes/Home";
+import About from "./routes/About";
+import Navbar from "./components/Navbar";
+
+const AppLayout = () => {
+  return (
+    <>
+      <Navbar />
+    </>
+  );
+};
 
 // Create a router
 const router = createBrowserRouter([
@@ -17,16 +28,11 @@ const router = createBrowserRouter([
     path: "/",
     // element: phần HTML của path
     // Link: route to another path
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        <Link to="about">About Us</Link>
-      </div>
-    ),
+    element: <Home />,
   },
   {
     path: "about",
-    element: <div>About</div>,
+    element: <About />,
   },
 ]);
 
