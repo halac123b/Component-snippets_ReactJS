@@ -7,6 +7,7 @@ import {
   RouterProvider,
   Route,
   Link,
+  Outlet,
 } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
@@ -16,6 +17,7 @@ const AppLayout = () => {
   return (
     <>
       <Navbar />
+      <Outlet />
     </>
   );
 };
@@ -23,16 +25,21 @@ const AppLayout = () => {
 // Create a router
 const router = createBrowserRouter([
   // List các path của website
-  // Homepath
   {
-    path: "/",
-    // element: phần HTML của path
-    // Link: route to another path
-    element: <Home />,
-  },
-  {
-    path: "about",
-    element: <About />,
+    element: <AppLayout />,
+    children: [
+      {
+        // Homepath
+        path: "/",
+        // element: phần HTML của path
+        // Link: route to another path
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+    ],
   },
 ]);
 

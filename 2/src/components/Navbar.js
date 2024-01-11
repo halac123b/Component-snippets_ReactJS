@@ -9,6 +9,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 
 function Navbar() {
+  // Set biến để lưu giá trị click
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
     <>
       <nav className="navBar">
@@ -17,6 +22,11 @@ function Navbar() {
             <GiRocketThruster className="navbar-icon" />
             River
           </Link>
+
+          {/* Icon thay đổi tùy vào state on/off */}
+          <div className="menu-icon" onClick={handleClick}>
+            {click ? <FaTimes /> : <FaBars />}
+          </div>
         </div>
       </nav>
     </>
