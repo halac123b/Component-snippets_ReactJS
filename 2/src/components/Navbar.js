@@ -27,6 +27,46 @@ function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
           </div>
+
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              {/* isActive là 1 prop của Navlink, nếu mục đó đang được chọn tức isActive = true */}
+              <NavLink
+                to="/"
+                className={(isActive) =>
+                  "nav-links" + (isActive ? " activated" : "")
+                }
+                onClick={closeMobileMenu}
+              >
+                Home
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              {/* isActive là 1 prop của Navlink, nếu mục đó đang được chọn tức isActive = true */}
+              <NavLink
+                to="/about"
+                className={(isActive) =>
+                  "nav-links" + (isActive ? " activated" : "")
+                }
+                onClick={closeMobileMenu}
+              >
+                About
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              {/* isActive là 1 prop của Navlink, nếu mục đó đang được chọn tức isActive = true */}
+              <NavLink
+                to="/contact"
+                className={(isActive) =>
+                  "nav-links" + (isActive ? " activated" : "")
+                }
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </nav>
     </>
