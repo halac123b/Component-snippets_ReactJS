@@ -2,16 +2,13 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 
 // Import package React Router
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-  Outlet,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
+import ErrorPage from "./routes/ErrorPage";
 import Navbar from "./components/Navbar";
+import Contact from "./routes/Contact";
+import "./App.css";
 
 const AppLayout = () => {
   return (
@@ -27,6 +24,8 @@ const router = createBrowserRouter([
   // List các path của website
   {
     element: <AppLayout />,
+    // Page xuất hiện nếu quá trình routing xảy ra lỗi
+    errorElement: <ErrorPage />,
     children: [
       {
         // Homepath
@@ -38,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },
